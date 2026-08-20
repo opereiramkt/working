@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apostila Automação Residencial 2026 — Guia Técnico Completo | JC Instalação Elétrica</title>
+<meta name="description" content="Guia técnico completo para instalação, programação e precificação de automação residencial. Sistemas Cabeada, Wi-Fi e Zigbee + tabelas de preços 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#1e3a8a',
+          cyan: '#06b6d4',
+          gold: '#fbbf24',
+          cta: '#ea580c',
+          ctaDark: '#c2410c',
+          success: '#10b981',
+        },
+        fontFamily: {
+          heading: ['Poppins', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, .font-heading { font-family: 'Poppins', sans-serif; }
+  @keyframes pulse-cta {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(234,88,12,0.55); }
+    50% { box-shadow: 0 0 0 14px rgba(234,88,12,0); }
+  }
+  .pulse-btn { animation: pulse-cta 2s infinite; }
+  .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .accordion-icon { transition: transform 0.3s ease; }
+  .rotate-180 { transform: rotate(180deg); }
+</style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+<!-- HEADER STICKY -->
+<header class="sticky top-0 z-50 shadow-md">
+  <div class="bg-cta text-white text-center text-xs sm:text-sm font-bold py-2 px-2">
+    🔥 OFERTA DE LANÇAMENTO — Preço promocional por tempo limitado
+  </div>
+  <div class="bg-navy text-white">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight">⚡ JC Instalação Elétrica</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] sm:text-xs font-semibold text-slate-200">
+        <span>🔒 Pagamento seguro</span>
+        <span>⚡ Acesso imediato</span>
+        <span>🛡️ Garantia 7 dias</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BLOCO 1 — HERO -->
+<section class="bg-gradient-to-b from-navy to-[#152c68] text-white">
+  <div class="max-w-6xl mx-auto px-4 pt-10 pb-12 sm:pt-14 sm:pb-16 grid sm:grid-cols-2 gap-8 items-center">
+    <div class="order-2 sm:order-1 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-5 text-xs sm:text-sm font-semibold">
+        <span>👥 +350 mil eletricistas acompanham o JC no Instagram</span>
+      </div>
+      <h1 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-5">
+        O Guia Que Transforma Eletricistas Comuns em <span class="text-gold">Integradores de Automação</span> — Com Tabelas de Preço Prontas Pra Você Cobrar Certo em 2026
+      </h1>
+      <h2 class="text-base sm:text-lg text-slate-200 mb-7 leading-relaxed">
+        3 sistemas completos (Cabeada, Wi-Fi e Zigbee) + tabelas de preços atualizadas + passo a passo de instalação. Pare de perder cliente por não saber orçar automação — comece a fechar projetos de <strong class="text-gold">R$ 3 mil a R$ 50 mil</strong>.
+      </h2>
+      <a href="#pacotes" class="pulse-btn inline-flex items-center justify-center gap-2 bg-cta hover:bg-ctaDark active:scale-95 transition-all rounded-xl px-8 py-4 min-h-[56px] text-base sm:text-lg font-bold shadow-lg shadow-orange-900/30 w-full sm:w-auto">
+        QUERO A APOSTILA AGORA →
+      </a>
+      <p class="text-xs text-slate-300 mt-3">📥 Acesso imediato após a confirmação do pagamento</p>
+    </div>
+    <div class="order-1 sm:order-2 flex justify-center">
+      <img src="https://placehold.co/400x520/1e3a8a/fbbf24?text=APOSTILA+PDF" alt="Mockup Apostila Automação Residencial 2026" class="w-56 sm:w-80 rounded-lg shadow-2xl -rotate-2">
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 2 — O QUE VOCÊ VAI RECEBER -->
+<section class="bg-white py-14 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-center text-navy mb-3">O QUE VOCÊ VAI DOMINAR</h2>
+    <p class="text-center text-slate-500 mb-10 max-w-2xl mx-auto">Conteúdo técnico direto ao ponto, feito para quem já mexe com elétrica e quer entrar de vez na automação residencial.</p>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+        <div class="text-4xl mb-4">🔌</div>
+        <h3 class="font-heading font-bold text-lg text-navy mb-2">Automação Cabeada</h3>
+        <p class="text-sm text-slate-600">KNX, RS-485, Control4, QTA, Rack, 14 pontos automatizados e tabela de preços profissional.</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+        <div class="text-4xl mb-4">📡</div>
+        <h3 class="font-heading font-bold text-lg text-navy mb-2">Automação Wi-Fi</h3>
+        <p class="text-sm text-slate-600">Instalação de interruptores inteligentes, configuração e integração com Alexa e Google.</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
+        <div class="text-4xl mb-4">🏠</div>
+        <h3 class="font-heading font-bold text-lg text-navy mb-2">Automação Zigbee & Touch</h3>
+        <p class="text-sm text-slate-600">Sistemas com Hub, rede mesh, cenas automáticas e sensores inteligentes.</p>
+      </div>
+    </div>
+    <div class="mt-10 bg-gold/15 border border-gold rounded-xl px-6 py-4 text-center">
+      <p class="font-heading font-bold text-navy text-sm sm:text-base">💰 + Tabela de Preços 2026 pronta pra usar em orçamentos</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 3 — DOR x SOLUÇÃO -->
+<section class="bg-slate-50 py-14 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-center text-navy mb-10 leading-snug">
+      Você Está Perdendo Dinheiro Toda Vez Que Um Cliente Pede Automação
+    </h2>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+        <p class="flex items-start gap-2 text-red-600 font-semibold mb-3"><span>❌</span><span>Não sabe o preço certo</span></p>
+        <p class="flex items-start gap-2 text-success font-semibold"><span>✅</span><span>Tabelas de preço 2026 prontas para 14 pontos automatizados</span></p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+        <p class="flex items-start gap-2 text-red-600 font-semibold mb-3"><span>❌</span><span>Só faz elétrica convencional</span></p>
+        <p class="flex items-start gap-2 text-success font-semibold"><span>✅</span><span>3 sistemas dominados: Cabeada, Wi-Fi e Zigbee</span></p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+        <p class="flex items-start gap-2 text-red-600 font-semibold mb-3"><span>❌</span><span>Depende de integrador</span></p>
+        <p class="flex items-start gap-2 text-success font-semibold"><span>✅</span><span>Passo a passo completo para instalar sozinho</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 4 — DEPOIMENTOS -->
+<section class="bg-white py-14 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-center text-navy mb-2">O QUE OS ELETRICISTAS ESTÃO FALANDO</h2>
+    <!-- SUBSTITUIR POR PRINTS REAIS -->
+    <p class="text-center text-xs text-slate-400 mb-10">(depoimentos ilustrativos — substituir por prints reais de clientes)</p>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+        <div class="text-gold mb-3">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"Depois que estudei o material, consegui fechar meu primeiro projeto de automação de R$ 8 mil. Antes eu nem sabia por onde começar a orçar."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://placehold.co/48x48/1e3a8a/ffffff?text=EL" class="rounded-full" alt="Foto do cliente">
+          <div>
+            <p class="font-semibold text-sm text-navy">Eletricista Cliente 1</p>
+            <p class="text-xs text-slate-400">Integrador — SP</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+        <div class="text-gold mb-3">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"As tabelas de preço mudaram meu jogo. Hoje cobro com confiança e não perco mais tempo achando valor no chute."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://placehold.co/48x48/1e3a8a/ffffff?text=EL" class="rounded-full" alt="Foto do cliente">
+          <div>
+            <p class="font-semibold text-sm text-navy">Eletricista Cliente 2</p>
+            <p class="text-xs text-slate-400">Instalador — MG</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+        <div class="text-gold mb-3">★★★★★</div>
+        <p class="text-sm text-slate-600 mb-4">"Material direto ao ponto, sem enrolação. Já apliquei o passo a passo de Zigbee no mesmo dia que terminei de ler."</p>
+        <div class="flex items-center gap-3">
+          <img src="https://placehold.co/48x48/1e3a8a/ffffff?text=EL" class="rounded-full" alt="Foto do cliente">
+          <div>
+            <p class="font-semibold text-sm text-navy">Eletricista Cliente 3</p>
+            <p class="text-xs text-slate-400">Eletricista — RS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 5 — PACOTES -->
+<section id="pacotes" class="bg-navy py-14 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-center text-white mb-2">ESCOLHA SEU ACESSO</h2>
+    <p class="text-center text-slate-300 mb-10">Pagamento único. Acesso imediato ao PDF.</p>
+    <div class="grid sm:grid-cols-2 gap-6 items-start">
+
+      <!-- BÁSICO -->
+      <div class="bg-white rounded-2xl p-7 shadow-xl flex flex-col">
+        <h3 class="font-heading font-bold text-lg text-slate-700 mb-1">APOSTILA BÁSICA</h3>
+        <p class="text-3xl font-heading font-extrabold text-navy mb-4">R$ 37,90 <span class="text-sm font-normal text-slate-400">à vista</span></p>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8 flex-1">
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> Apostila Automação Residencial 2026 (PDF)</li>
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> Acesso imediato</li>
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> Garantia 7 dias</li>
+        </ul>
+        <a href="{CHECKOUT_URL_BASICO}" class="text-center bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-xl px-6 py-4 min-h-[56px] flex items-center justify-center transition-colors">
+          QUERO O BÁSICO
+        </a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="relative bg-white rounded-2xl p-7 shadow-2xl border-4 border-gold flex flex-col sm:-mt-4 sm:mb-4">
+        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-navy text-xs font-heading font-extrabold px-4 py-1.5 rounded-full shadow-md whitespace-nowrap">
+          🏆 MAIS VENDIDO
+        </span>
+        <h3 class="font-heading font-bold text-lg text-navy mb-1 mt-2">PACOTE PREMIUM COMPLETO</h3>
+        <div class="flex items-center gap-3 mb-4">
+          <p class="text-3xl font-heading font-extrabold text-cta">R$ 67,90</p>
+          <p class="text-sm text-slate-400 line-through">R$ 37,90</p>
+          <span class="text-sm text-slate-500">à vista</span>
+        </div>
+        <ul class="space-y-3 text-sm text-slate-700 mb-8 flex-1">
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> Apostila Automação Residencial 2026 (PDF)</li>
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> Aulas Complementares em vídeo</li>
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> 🎁 <strong>BÔNUS 1:</strong> Apostila Manual do Eletricista</li>
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> 🎁 <strong>BÔNUS 2:</strong> Apostila Medidas Elétricas</li>
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> 🎁 <strong>BÔNUS 3:</strong> Apostila Passo da Infraestrutura</li>
+          <li class="flex items-start gap-2"><span class="text-success font-bold">✓</span> Acesso imediato + Garantia 7 dias</li>
+        </ul>
+        <a href="{CHECKOUT_URL_PREMIUM}" class="pulse-btn text-center bg-cta hover:bg-ctaDark active:scale-95 transition-all text-white font-heading font-extrabold rounded-xl px-6 py-4 min-h-[56px] flex items-center justify-center text-base shadow-lg shadow-orange-900/30">
+          QUERO O PACOTE COMPLETO →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 6 — BÔNUS DETALHADOS -->
+<section class="bg-white py-14 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-center text-navy mb-10">O QUE VOCÊ GANHA A MAIS NO PREMIUM</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">🎥</div>
+        <h3 class="font-heading font-bold text-navy text-sm mb-2">Aulas Complementares</h3>
+        <p class="text-xs text-slate-600 mb-3">Videoaulas reforçando os pontos práticos da apostila.</p>
+        <p class="text-xs font-bold text-cta">Valor sozinho: R$ 97</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">📘</div>
+        <h3 class="font-heading font-bold text-navy text-sm mb-2">Manual do Eletricista</h3>
+        <p class="text-xs text-slate-600 mb-3">Instalação elétrica residencial do zero.</p>
+        <p class="text-xs font-bold text-cta">Valor sozinho: R$ 47</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">📏</div>
+        <h3 class="font-heading font-bold text-navy text-sm mb-2">Medidas Elétricas</h3>
+        <p class="text-xs text-slate-600 mb-3">Multímetro e todos os aparelhos de medida.</p>
+        <p class="text-xs font-bold text-cta">Valor sozinho: R$ 37</p>
+      </div>
+      <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">🏗️</div>
+        <h3 class="font-heading font-bold text-navy text-sm mb-2">Passo da Infraestrutura</h3>
+        <p class="text-xs text-slate-600 mb-3">Infraestrutura elétrica profissional.</p>
+        <p class="text-xs font-bold text-cta">Valor sozinho: R$ 47</p>
+      </div>
+    </div>
+    <div class="mt-10 bg-navy text-white rounded-2xl px-6 py-6 text-center">
+      <p class="text-sm text-slate-300 mb-1">Total do pacote se comprado separado: <span class="line-through">R$ 228</span></p>
+      <p class="font-heading font-extrabold text-xl sm:text-2xl text-gold">Você leva tudo por apenas R$ 67,90</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO 7 — GARANTIA + FAQ + CTA FINAL -->
+<section class="bg-slate-50 py-14 sm:py-20">
+  <div class="max-w-4xl mx-auto px-4">
+
+    <div class="bg-white border-2 border-success rounded-2xl p-6 sm:p-8 text-center mb-14 shadow-sm">
+      <div class="text-4xl mb-3">🛡️</div>
+      <h3 class="font-heading font-extrabold text-lg sm:text-xl text-navy mb-2">GARANTIA INCONDICIONAL DE 7 DIAS</h3>
+      <p class="text-sm sm:text-base text-slate-600">Se não gostar, devolvemos 100% do valor, sem perguntas.</p>
+    </div>
+
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-center text-navy mb-8">PERGUNTAS FREQUENTES</h2>
+    <div class="space-y-3 mb-14" id="faq">
+
+      <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-navy text-sm sm:text-base">
+          <span>Preciso ter experiência prévia em automação?</span>
+          <span class="accordion-icon text-cta text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content px-5 text-sm text-slate-600">
+          <p class="pb-4">Não. A apostila foi feita para eletricistas e instaladores que já têm base de elétrica, mas nunca trabalharam com automação. O conteúdo começa do zero em cada sistema.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-navy text-sm sm:text-base">
+          <span>Como recebo o material após a compra?</span>
+          <span class="accordion-icon text-cta text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content px-5 text-sm text-slate-600">
+          <p class="pb-4">O acesso é liberado imediatamente após a confirmação do pagamento, direto no seu e-mail e/ou na página de acesso, em formato PDF digital.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-navy text-sm sm:text-base">
+          <span>Serve pra qual tipo de eletricista?</span>
+          <span class="accordion-icon text-cta text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content px-5 text-sm text-slate-600">
+          <p class="pb-4">Serve para eletricistas autônomos, instaladores, integradores iniciantes e profissionais que já atuam na área e querem agregar o serviço de automação residencial ao seu portfólio.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-navy text-sm sm:text-base">
+          <span>Posso usar as tabelas de preço em qualquer região do Brasil?</span>
+          <span class="accordion-icon text-cta text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content px-5 text-sm text-slate-600">
+          <p class="pb-4">Sim. As tabelas servem como base nacional de referência 2026. Recomendamos ajustar os valores conforme a realidade de custo e demanda da sua região.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between text-left px-5 py-4 font-semibold text-navy text-sm sm:text-base">
+          <span>E se eu não gostar?</span>
+          <span class="accordion-icon text-cta text-xl leading-none">+</span>
+        </button>
+        <div class="accordion-content px-5 text-sm text-slate-600">
+          <p class="pb-4">Você tem 7 dias de garantia incondicional. Basta solicitar e devolvemos 100% do seu dinheiro, sem burocracia.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center">
+      <a href="#pacotes" class="pulse-btn inline-flex items-center justify-center gap-2 bg-cta hover:bg-ctaDark active:scale-95 transition-all rounded-xl px-8 py-4 min-h-[56px] text-base sm:text-lg font-bold text-white shadow-lg shadow-orange-900/30 w-full sm:w-auto">
+        GARANTIR MEU ACESSO AGORA
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="bg-navy text-slate-300 text-xs py-8">
+  <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+    <p>JC Instalação Elétrica — CNPJ: 00.000.000/0001-00</p>
+    <p class="space-x-3">
+      <a href="#" class="underline hover:text-white">Termos de Uso</a>
+      <span>·</span>
+      <a href="#" class="underline hover:text-white">Política de Privacidade</a>
+    </p>
+    <p>© 2026 JC Instalação Elétrica. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var content = item.querySelector('.accordion-content');
+      var icon = item.querySelector('.accordion-icon');
+      var isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+      document.querySelectorAll('.accordion-content').forEach(function (c) { c.style.maxHeight = '0px'; });
+      document.querySelectorAll('.accordion-icon').forEach(function (i) { i.classList.remove('rotate-180'); });
+
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.classList.add('rotate-180');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
