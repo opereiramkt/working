@@ -1,0 +1,6 @@
+anthropic>=2.4.0
+requests>=2.31
+Pillow>=10.0
+PyYAML>=6.0
+# opcional, só para o coletor "playwright":
+# playwright>=1.45

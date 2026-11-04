@@ -1,0 +1,91 @@
+# =============================================================
+#  CLONE RADAR — configuração
+#  Copie para config.yaml e preencha com as SUAS ofertas.
+#  Segredos (tokens) ficam em variáveis de ambiente, nunca aqui.
+# =============================================================
+
+geral:
+  pais: BR                 # país da Biblioteca de Anúncios
+  idioma_busca: pt
+  max_anuncios_por_busca: 60
+  apenas_ativos: true      # só anúncios ativos
+  # Fontes de coleta, na ordem em que são tentadas.
+  #   apify      -> mais confiável p/ anúncios comerciais no Brasil (precisa APIFY_TOKEN)
+  #   meta_api   -> API oficial (só retorna anúncios comerciais entregues na UE
+  #                 ou anúncios políticos; útil se você também roda na Europa)
+  #   playwright -> raspagem direta da página pública (experimental, sem custo)
+  coletores: [apify]
+  apify_actor: curious_coder~facebook-ads-library-scraper
+  meta_api_versao: v23.0
+
+  # Notas de corte (0-100)
+  limite_suspeito: 45      # a partir daqui vai pro relatório
+  limite_alerta: 65        # a partir daqui dispara alerta (Telegram/Discord/e-mail)
+  analise_ia: true         # usa Claude p/ julgar os suspeitos (precisa ANTHROPIC_API_KEY)
+  analisar_landing: true   # baixa a página de destino do anúncio e compara com a sua
+
+  # Páginas que são SUAS (ou de parceiros/afiliados autorizados) — nunca geram alerta
+  paginas_ignoradas:
+    - "JC Instalação Elétrica"
+  page_ids_ignorados: []
+  dominios_ignorados: []   # ex: ["seudominio.com.br"]
+
+# Concorrentes que você já desconfia — o radar varre TODOS os anúncios dessas páginas
+paginas_monitoradas: []
+#  - page_id: "123456789012345"
+#    nome: "Fulano Cursos"
+
+ofertas:
+  - id: apostila-automacao
+    nome: "Apostila Automação Residencial 2026"
+    # Descrição do produto em linguagem natural (usada pela IA p/ julgar "produto parecido")
+    produto: >
+      Apostila em PDF para eletricistas sobre automação residencial: 3 sistemas
+      (cabeada KNX/RS-485, Wi-Fi com Alexa/Google, Zigbee com hub), passo a passo de
+      instalação e tabelas de preço 2026 para 14 pontos automatizados. Plano básico
+      R$ 37,90 e premium R$ 67,90 com bônus (Manual do Eletricista, Medidas Elétricas,
+      Passo da Infraestrutura) e aulas complementares. Garantia de 7 dias.
+
+    # Termos que o radar pesquisa na Biblioteca de Anúncios (1 busca por termo)
+    termos_busca:
+      - "apostila automação residencial"
+      - "automação residencial eletricista"
+      - "tabela de preços automação"
+      - "integrador de automação"
+      - "zigbee eletricista"
+
+    # Suas copies (textos dos anúncios). Cole as principais, quanto mais melhor.
+    copies:
+      - >
+        O guia que transforma eletricistas comuns em integradores de automação — com
+        tabelas de preço prontas pra você cobrar certo em 2026. 3 sistemas completos
+        (Cabeada, Wi-Fi e Zigbee) + tabelas de preços atualizadas + passo a passo de
+        instalação.
+      - >
+        Você está perdendo dinheiro toda vez que um cliente pede automação. Pare de
+        perder cliente por não saber orçar automação — comece a fechar projetos de
+        R$ 3 mil a R$ 50 mil.
+
+    # Frases/elementos MUITO específicos da sua oferta (nome de bônus, promessas,
+    # números). Cada um que aparecer no anúncio do outro pesa forte no score.
+    assinaturas:
+      - "eletricistas comuns em integradores"
+      - "tabelas de preço prontas"
+      - "14 pontos automatizados"
+      - "cabeada, wi-fi e zigbee"
+      - "manual do eletricista"
+      - "medidas elétricas"
+      - "passo da infraestrutura"
+      - "projetos de r$ 3 mil a r$ 50 mil"
+      - "37,90"
+      - "67,90"
+
+    # Pasta com seus criativos (jpg/png/webp). Para vídeos, coloque um print/thumbnail.
+    pasta_criativos: ofertas/apostila-automacao/criativos
+
+    # Sua página de vendas: arquivo local OU URL (usado p/ comparar com a landing do outro)
+    landing: ../index.html
+
+    # IDs de produto no checkout (Hotmart/Kiwify/Eduzz...). Se a landing do suspeito
+    # apontar pro MESMO produto, ele é afiliado seu — não clone.
+    ids_checkout: []

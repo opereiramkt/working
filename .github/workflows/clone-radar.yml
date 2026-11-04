@@ -1,0 +1,63 @@
+name: Clone Radar
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # a cada 6 horas
+  workflow_dispatch: {}       # botão "Run workflow" para rodar na hora
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: clone-radar
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: clone-radar/requirements.txt
+
+      - run: pip install -r requirements.txt
+
+      # histórico (não alertar duas vezes o mesmo anúncio)
+      - uses: actions/cache/restore@v4
+        with:
+          path: clone-radar/dados
+          key: radar-db-${{ github.run_id }}
+          restore-keys: radar-db-
+
+      - name: Rodar radar
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
+        run: |
+          CONFIG=config.yaml
+          [ -f "$CONFIG" ] || CONFIG=config.example.yaml
+          python -m radar --config "$CONFIG" run
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: clone-radar/dados
+          key: radar-db-${{ github.run_id }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relatorio-clone-radar
+          path: clone-radar/relatorios/
+          retention-days: 30
