@@ -31,11 +31,15 @@ def diagnose(page_url_now: str, html: str, n_graphql: int) -> str:
     """Classifica por que uma busca voltou vazia."""
     u = page_url_now.lower()
     h = html.lower()
-    if "/checkpoint" in u or "captcha" in h or "g-recaptcha" in h or "security check" in h:
+    if "/checkpoint" in u or '"xfb_ad_library_is_captcha_required":true' in h or "g-recaptcha" in h:
         return "captcha/checkpoint"
-    if "/login" in u or 'id="login_form"' in h or 'name="login"' in h and "ads/library" not in u:
+    if "/login" in u or 'id="login_form"' in h:
         return "tela de login"
-    if "nenhum anúncio corresponde" in h or "no ads match" in h or "0 resultados" in h:
+    m = re.search(r'"search_results_connection":\{"count":(\d+),"edges":\[\]', html)
+    if m and int(m.group(1)) > 0:
+        return (f"resultados ocultos: o Facebook diz que há {m.group(1)} anúncios mas não entrega "
+                "nenhum a este navegador (bloqueio de acesso automatizado)")
+    if "nenhum anúncio corresponde" in h or "no ads match" in h:
         return "busca sem resultados (página carregou normalmente)"
     if n_graphql == 0 and "ad_archive_id" not in h:
         return "layout novo (nenhuma resposta GraphQL nem JSON de anúncio)"
