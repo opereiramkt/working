@@ -14,7 +14,7 @@ geral:
   #   meta_api   -> API oficial (só retorna anúncios comerciais entregues na UE
   #                 ou anúncios políticos; útil se você também roda na Europa)
   #   playwright -> raspagem direta da página pública (experimental, sem custo)
-  coletores: [apify]
+  coletores: [apify, playwright]   # sem APIFY_TOKEN, o apify é pulado e fica só o playwright
   apify_actor: curious_coder~facebook-ads-library-scraper
   meta_api_versao: v23.0
 
