@@ -246,7 +246,7 @@ A pessoa já está quase convencida; aqui você confirma o pedido, como o atende
 - **Mobile first.** A maior parte do tráfego vem do celular. Valide primeiro em 390 × 844.
 - Primeira dobra e bloco de oferta cabem inteiros na tela (seções 7.2 e 7.12).
 - Galerias de produto sempre em carrossel horizontal com deslizar.
-- Página em HTML estático (não WordPress nem Elementor): carrega mais rápido e converte mais.
+- Página leve, feita com IA: HTML estático ou o próprio stack da ferramenta (Lovable, por exemplo). Nunca WordPress nem Elementor: carregam mais devagar e convertem menos.
 - Imagens em WebP, com `loading="lazy"` fora da primeira dobra, e tamanho adequado.
 - Vídeo comprimido, com imagem de capa (`poster`) e `preload="none"`; nunca bloquear a primeira dobra esperando o vídeo.
 - Hospedagem com CDN: Netlify (tem plano gratuito), Vercel ou Hostinger. Não use a hospedagem de pré-visualização da ferramenta de IA para rodar tráfego.
